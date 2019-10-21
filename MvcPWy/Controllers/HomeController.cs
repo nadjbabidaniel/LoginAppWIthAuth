@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace MvcPWy.Controllers
 {
-    
     public class HomeController : Controller
     {
         public ActionResult Index()
