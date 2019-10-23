@@ -201,6 +201,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\SIS-Gold.jpg" />
+    <Content Include="Images\SIS_Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\MvcP.pubxml" />
