@@ -27,7 +27,7 @@ namespace MvcPWy
             catch (Exception exception)
             {
 
-                throw;
+                
             }
         }
 
@@ -40,7 +40,6 @@ namespace MvcPWy
             catch (Exception exception)
             {
 
-                throw;
             }
         }
 
@@ -53,7 +52,6 @@ namespace MvcPWy
             catch (Exception exception)
             {
 
-                throw;
             }
         }
 

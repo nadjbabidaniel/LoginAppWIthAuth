@@ -22,11 +22,11 @@
                     @Html.ActionLink("App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>*@
             <a href="@Url.Action("Index", "Home")">
-                <img src="@Url.Content("/images/SIS_Logo.jpg")" alt="Image" width="200px" style="float:left;" />
+                <img src="@Url.Content("/images/SIS_Logo.jpg")" alt="Image" width="200px" style="float:left; margin-right:10px" />
             </a>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li @*style="background-color:#eee; border-bottom-style: solid; border-bottom-color: #333;"*@>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -63,15 +63,15 @@
 </html>
 
 <style>
-    a:hover {
-        color: hotpink;
+    .navbar-collapse .navbar-nav.navbar-right > li > a:hover,
+    .navbar-collapse.collapse > ul.nav.navbar-nav > li > a:hover {
+        background-color:#eee; 
+        border-bottom-style: solid; 
+        /*border-bottom-color: #333;*/
     }
 </style>
 <script>
     (function () {
-
-
-
 
     })();
 </script>
