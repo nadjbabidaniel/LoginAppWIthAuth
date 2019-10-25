@@ -95,9 +95,10 @@ namespace MvcPWy.Controllers
         }      
 
         // GET: /Manage/ChangeFirstLastName
-        public ActionResult ChangeFirstLastName()
+        public async Task<ActionResult> ChangeFirstLastName()
         {
-            return View();
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeFirstLastNameViewModel { FirstName = user.FirstName, LastName = user.LastName});
         }
 
         // POST: /Manage/ChangeFirstLastName
