@@ -35,9 +35,9 @@
            @(Model.FirstName ?? "None") [
            @if (Model.FirstName != null)
            {
-               @Html.ActionLink("Change", "AddPhoneNumber")
-               @: &nbsp;|&nbsp;
-               @Html.ActionLink("Remove", "RemovePhoneNumber")
+               @Html.ActionLink("Change", "ChangeFirstLastName")
+               @*@: &nbsp;|&nbsp;
+               @Html.ActionLink("Remove", "RemovePhoneNumber")*@
            }
            else
            {
@@ -51,9 +51,9 @@
            @(Model.LastName ?? "None") [
            @if (Model.LastName != null)
            {
-               @Html.ActionLink("Change", "AddPhoneNumber")
-               @: &nbsp;|&nbsp;
-               @Html.ActionLink("Remove", "RemovePhoneNumber")
+               @Html.ActionLink("Change", "ChangeFirstLastName")
+               @*@: &nbsp;|&nbsp;*@
+               @*@Html.ActionLink("Remove", "RemovePhoneNumber")*@
            }
            else
            {

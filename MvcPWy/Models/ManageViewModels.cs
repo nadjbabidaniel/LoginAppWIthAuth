@@ -70,6 +70,15 @@ namespace MvcPWy.Models
         public string Number { get; set; }
     }
 
+    public class ChangeFirstLastNameViewModel
+    {        
+        [Display(Name = "Please insert your first name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Please insert your last name")]
+        public string LastName { get; set; }
+    }
+
     public class VerifyPhoneNumberViewModel
     {
         [Required]

@@ -92,6 +92,31 @@ namespace MvcPWy.Controllers
                 message = ManageMessageId.Error;
             }
             return RedirectToAction("ManageLogins", new { Message = message });
+        }      
+
+        // GET: /Manage/ChangeFirstLastName
+        public ActionResult ChangeFirstLastName()
+        {
+            return View();
+        }
+
+        // POST: /Manage/ChangeFirstLastName
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeFirstLastName(ChangeFirstLastNameViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
         }
 
         //
