@@ -19,7 +19,11 @@ namespace MvcPWy.Models
         //Extended Properties
         public override string PhoneNumber { get; set; }        
         public string FirstName { get; set; }        
-        public string LastName { get; set; }        
+        public string LastName { get; set; }
+        public int CurrentNumberPrizes{ get; set; }
+        public int MaxNumberPrizes{ get; set; }
+
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
