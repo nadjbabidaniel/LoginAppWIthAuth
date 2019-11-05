@@ -3,11 +3,21 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" style="height:800px">
-    <h1>Hi @Model.FirstName</h1><br><br><br>
-    <p class="lead">You have @Model.CurrentNumberPrizes from @Model.MaxNumberPrizes prizes.</p>
-    @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
-</div>
+    <div class="jumbotron" style="height:800px">
+        @{
+            if (Model != null)
+            {
+                <h1>Hi @Model.FirstName</h1><br><br><br>
+                <p class="lead">You have @Model.CurrentNumberPrizes from @Model.MaxNumberPrizes prizes.</p>
+            }
+            else
+            {
+                <h1>Hello</h1><br><br><br>
+                <p class="lead">You need to login/register.</p>
+            }
+            @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        }
+    </div>
 
 <div class="row">
     @*<div class="col-md-4">

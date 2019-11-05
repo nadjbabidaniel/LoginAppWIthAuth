@@ -21,8 +21,7 @@ namespace MvcPWy.Models
         public string FirstName { get; set; }        
         public string LastName { get; set; }
         public int CurrentNumberPrizes{ get; set; }
-        public int MaxNumberPrizes{ get; set; }
-
+        public int MaxNumberPrizes { get; set; } = 4;
 
     }
 
