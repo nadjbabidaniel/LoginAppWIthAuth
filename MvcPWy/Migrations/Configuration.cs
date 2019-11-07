@@ -16,17 +16,17 @@ namespace MvcPWy.Migrations
         protected override void Seed(MvcPWy.Models.ApplicationDbContext context)
         {
             string roleName = "Administrator";
-            string userName = "Admin";
+            string userName = "admin@gmail.com";
             string password = "Password2015";
-            string email = "admin@jkxy.com";
+            string email = "admin@gmail.com";
 
 
             context.Users.AddOrUpdate(
                   new Models.ApplicationUser { 
-                            Email = "admin@gmail.com", 
+                            Email = email, 
                             EmailConfirmed=true,
                             Id = "11",
-                            UserName = "Admin",
+                            UserName = userName,
                             PasswordHash = "AIBC/ix/ueunE2DrcP50RAaTGJJXnYbmFpGwln7EmDW7yD8jcGY/2RjSu7opFzNS8Q==",
                             SecurityStamp = "1b57454b-3e84-4e45-9768-d26f95ba6006",
                   }
