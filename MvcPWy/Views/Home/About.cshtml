@@ -1,20 +1,60 @@
-﻿    @{
-        ViewBag.Title = "SIS Gold";
-    }
-    <h2 style="margin-top: 35px; margin-bottom: -35px;">SIS Gold</h2>
-    <br>
-    <br>
-    <h2>Get rewards for participating in SIS Studies.</h2>
+﻿@{
+//ViewBag.Title = "SIS Gold";
+}
+@*<h2 style="margin-top: 35px; margin-bottom: -35px;">SIS Gold</h2>*@
+<br>
+<br>
+@*<h2>Get rewards for participating in SIS Studies.</h2>*@
 
-    <img src="@Url.Content("/images/SIS-Gold.jpg")" alt="Image" width="800px" />
+@*<img src="@Url.Content("/images/Overview1.jpg")" alt="Image" width="800px" />*@
+<div class="homeimage1"></div>
+<br>
+<div class="homeimage2"></div>
+@*<img src="@Url.Content("/images/Overview2.jpg")" alt="Image" width="800px" />*@
 
-    <h2>At SIS we value our panel!</h2>
+@*<h2>At SIS we value our panel!</h2>
 
     <h3>
         When you participate in our studies you earn SIS Gold, you can then redeem it for cool prizes and gift cards on our SIS Gold Platform.
         <br><br>
         To join, please follow this link: <a href="http://sisgoldplatform.com">www.sisgoldplatform.com</a>
-    </h3>
-    @*<h3>@ViewBag.Message</h3>*@
+    </h3>*@
+@*<h3>@ViewBag.Message</h3>*@
 
-    <p>Use this area to provide additional information.</p>
+@*<p>Use this area to provide additional information.</p>*@
+
+<style>
+    .homeimage1 {
+        /* The image used */
+        background-image: url("/images/Overview1.jpg");
+        /* Full height */
+        height: 1000px;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+     .homeimage2 {
+        /* The image used */
+        background-image: url("/images/Overview2.jpg");
+        /* Full height */
+        height: 1000px;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .body-content {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+</style>
+
+
+
+
+
+
+
