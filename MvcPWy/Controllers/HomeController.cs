@@ -56,6 +56,13 @@ namespace MvcPWy.Controllers
             return View();
         }
 
+        public ActionResult Belohnungen()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
         //[Authorize]
         public ActionResult Contact()
         {

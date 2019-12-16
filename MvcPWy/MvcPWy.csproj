@@ -263,6 +263,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
     <Content Include="Views\Manage\ChangeFirstLastName.cshtml" />
+    <Content Include="Views\Home\Belohnungen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
