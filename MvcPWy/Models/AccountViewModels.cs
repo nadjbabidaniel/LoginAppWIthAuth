@@ -88,6 +88,34 @@ namespace MvcPWy.Models
 
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+        [Display(Name = "Gender")]
+        public Gender Gender { get; set; }
+        
+        [Display(Name = "Social Media")]
+        public string SocialMedia { get; set; }
+
+        [Display(Name = "Company Name")]
+        public string CompanyName{ get; set; }
+
+        [Display(Name = "Company Size")]
+        public int CompanySize { get; set; }
+
+        [Display(Name = "Job Title")]
+        public string JobTitle { get; set; }
+
+        [Display(Name = "Country")]
+        public string CountryName{ get; set; }
+
+        [Display(Name = "State")]
+        public string StateName{ get; set; }
+
+        [Display(Name = "City")]
+        public string CityName{ get; set; }
+
+        [Display(Name = "Ethnicity")]
+        public Ethnicity Ethnicity { get; set; }
+
     }
 
     public class ResetPasswordViewModel
