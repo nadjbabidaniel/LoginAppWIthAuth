@@ -20,9 +20,32 @@ namespace MvcPWy.Models
         public override string PhoneNumber { get; set; }        
         public string FirstName { get; set; }        
         public string LastName { get; set; }
+        public Gender Gender{ get; set; }
+        public string SocialMedia { get; set; }
+        public string CompanyName { get; set; }
+        public int CompanySize { get; set; }
+        public string JobTitle { get; set; }
+        public string CountryName { get; set; }
+        public string StateName { get; set; }
+        public string CityName { get; set; }
+        public Ethnicity Ethnicity { get; set; }
         public int CurrentNumberPrizes{ get; set; }
         public int MaxNumberPrizes { get; set; } = 4;
+    }
 
+    public enum Gender {
+        None,
+        Male,
+        Female
+    }
+    public enum Ethnicity
+    {
+        Other,
+        White,
+        Black,
+        Asian,
+        Native_American,
+        Hispano
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
