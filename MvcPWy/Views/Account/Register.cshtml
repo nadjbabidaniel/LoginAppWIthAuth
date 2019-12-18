@@ -43,7 +43,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.Gender, new { @class = "form-control" })
         </div>
     </div>
 
@@ -62,9 +62,9 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.CountryName, new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.CountryName, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.Country, new { @class = "form-control" })
         </div>
     </div>
 
@@ -78,7 +78,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Ethnicity, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Ethnicity, new { @class = "form-control" })
+            @Html.EnumDropDownListFor(m => m.Ethnicity, new { @class = "form-control" })
         </div>
     </div>
 

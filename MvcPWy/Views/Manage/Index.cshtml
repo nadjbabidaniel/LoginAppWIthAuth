@@ -94,7 +94,7 @@
             ]
         </dd>
 
-        <dt>Social Media:</dt>
+        <dt>Social Media\Linkedin:</dt>
         <dd>
             @(Model.SocialMedia ?? "None") [
             @if (Model.SocialMedia != null)
@@ -144,8 +144,8 @@
 
         <dt>Country Name:</dt>
         <dd>
-            @(Model.CountryName ?? "None") [
-            @if (Model.CountryName != null)
+            @(Model.Country.ToString() ?? "None") [
+            @if (Model.Country.ToString() != null)
             {
                 @Html.ActionLink("Change", "AddCountryName")
                 @: &nbsp;|&nbsp;

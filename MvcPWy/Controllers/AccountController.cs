@@ -173,7 +173,23 @@ namespace MvcPWy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PhoneNumber = model.PhoneNumber, FirstName = model.FirstName, LastName = model.LastName };
+                var user = new ApplicationUser 
+                { 
+                    UserName = model.Email, 
+                    Email = model.Email, 
+                    PhoneNumber = model.PhoneNumber, 
+                    FirstName = model.FirstName, 
+                    LastName = model.LastName,
+                    Country = model.Country,
+                    CompanyName = model.CompanyName,
+                    CompanySize = model.CompanySize,
+                    Gender = model.Gender,
+                    Ethnicity = model.Ethnicity,
+                    SocialMedia = model.SocialMedia,
+                    StateName = model.StateName,
+                    CityName = model.CityName,
+                    HouseHoldIncome = model.HouseHoldIncome
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

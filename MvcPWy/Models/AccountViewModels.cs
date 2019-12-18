@@ -92,7 +92,7 @@ namespace MvcPWy.Models
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
         
-        [Display(Name = "Social Media")]
+        [Display(Name = "Social Media|Linkedin")]
         public string SocialMedia { get; set; }
 
         [Display(Name = "Company Name")]
@@ -105,7 +105,7 @@ namespace MvcPWy.Models
         public string JobTitle { get; set; }
 
         [Display(Name = "Country")]
-        public string CountryName{ get; set; }
+        public Country Country { get; set; }
 
         [Display(Name = "State")]
         public string StateName{ get; set; }
@@ -116,6 +116,8 @@ namespace MvcPWy.Models
         [Display(Name = "Ethnicity")]
         public Ethnicity Ethnicity { get; set; }
 
+        [Display(Name = "House Hold Income")]
+        public string HouseHoldIncome { get; set; }        
     }
 
     public class ResetPasswordViewModel

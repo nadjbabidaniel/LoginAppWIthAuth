@@ -48,6 +48,8 @@ namespace MvcPWy.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
+            var currentUser = UserManager.Users.ToList().FirstOrDefault(x => x.Id.Equals(User.Identity.GetUserId()));
+
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
@@ -55,8 +57,17 @@ namespace MvcPWy.Controllers
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
                 Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(User.Identity.GetUserId()),
-                FirstName = UserManager.Users.ToList().FirstOrDefault(x => x.Id.Equals(User.Identity.GetUserId())).FirstName,
-                LastName = UserManager.Users.ToList().FirstOrDefault(x => x.Id.Equals(User.Identity.GetUserId())).LastName
+                FirstName = currentUser.FirstName,
+                LastName = currentUser.LastName,
+                Gender = currentUser.Gender,
+                Ethnicity = currentUser.Ethnicity,
+                CityName = currentUser.CityName,
+                StateName = currentUser.StateName,
+                SocialMedia = currentUser.SocialMedia,
+                CompanyName = currentUser.CompanyName,
+                CompanySize = currentUser.CompanySize,
+                JobTitle = currentUser.JobTitle,
+                Country = currentUser.Country
             };
             return View(model);
         }
