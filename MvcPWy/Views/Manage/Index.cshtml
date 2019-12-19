@@ -67,13 +67,13 @@
             @(Model.LastName ?? "None") [
             @if (Model.LastName != null)
             {
-                @Html.ActionLink("Change", "ChangeFirstLastName")
+                @Html.ActionLink("Change", "ChangeFirstLastNameJobTitle")
                 @*@: &nbsp;|&nbsp;*@
                 @*@Html.ActionLink("Remove", "RemovePhoneNumber")*@
             }
             else
             {
-                @Html.ActionLink("Add", "ChangeFirstLastName")
+                @Html.ActionLink("Add", "ChangeFirstLastNameJobTitle")
             }
             ]
         </dd>
