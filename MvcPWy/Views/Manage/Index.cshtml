@@ -80,7 +80,7 @@
 
         <dt>Gender:</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.Country, new { @disabled = "disabled" })
+            @Html.EnumDropDownListFor(m => m.Gender, new { @disabled = "disabled" })
             [
                 @Html.ActionLink("Change", "ChangeGender")
             ]
@@ -104,9 +104,17 @@
 
         <dt>Company Name:</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.Gender, new { @disabled = "disabled" })
-            [
-            @Html.ActionLink("Change", "ChangeCompanyName")
+            @(Model.CompanyName  ?? "None") [
+            @if (Model.CompanyName != null)
+            {
+                @Html.ActionLink("Change", "AddCompanySize")
+                @: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemoveCompanySize")
+            }
+            else
+            {
+                @Html.ActionLink("Add", "RemoveCompanySize")
+            }
             ]
         </dd>
 
