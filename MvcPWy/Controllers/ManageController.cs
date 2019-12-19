@@ -103,19 +103,19 @@ namespace MvcPWy.Controllers
                 message = ManageMessageId.Error;
             }
             return RedirectToAction("ManageLogins", new { Message = message });
-        }      
+        }
 
-        // GET: /Manage/ChangeFirstLastName
-        public async Task<ActionResult> ChangeFirstLastName()
+        // GET: /Manage/ChangeFirstLastNameJobTitle
+        public async Task<ActionResult> ChangeFirstLastNameJobTitle()
         {
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            return View(new ChangeFirstLastNameViewModel { FirstName = user.FirstName, LastName = user.LastName});
+            return View(new ChangeFirstLastNameJobTitleViewModel { FirstName = user.FirstName, LastName = user.LastName, JobTitle = user.JobTitle});
         }
 
         // POST: /Manage/ChangeFirstLastName
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangeFirstLastName(ChangeFirstLastNameViewModel model)
+        public async Task<ActionResult> ChangeFirstLastNameJobTitle(ChangeFirstLastNameJobTitleViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -125,6 +125,7 @@ namespace MvcPWy.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             user.FirstName = model.FirstName;
             user.LastName = model.LastName;
+            user.JobTitle = model.JobTitle;
 
             await UserManager.UpdateAsync(user);
 
@@ -135,13 +136,13 @@ namespace MvcPWy.Controllers
         public async Task<ActionResult> ChangeGender()
         {
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            return View(new ChangeGenderViewModel { Gender = user.Gender });
+            return View(new ChangeGenderEthnicityViewModel { Gender = user.Gender});
         }
 
         // POST: /Manage/ChangeGender
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ChangeGender(ChangeGenderViewModel model)
+        public async Task<ActionResult> ChangeGender(ChangeGenderEthnicityViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -150,11 +151,35 @@ namespace MvcPWy.Controllers
 
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());           
             user.Gender = model.Gender;
-
             await UserManager.UpdateAsync(user);
 
             return RedirectToAction("Index", "Manage");
         }
+
+        // GET: /Manage/ChangeEthnicity
+        public async Task<ActionResult> ChangeEthnicity()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeGenderEthnicityViewModel { Ethnicity = user.Ethnicity});
+        }
+
+        // POST: /Manage/ChangeEthnicity
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeEthnicity(ChangeGenderEthnicityViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.Ethnicity = model.Ethnicity;
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
 
         // GET: /Manage/ChangeSocialMedia
         public async Task<ActionResult> ChangeSocialMedia()
@@ -205,14 +230,14 @@ namespace MvcPWy.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        // GET: /Manage/ChangeCompany
+        // GET: /Manage/ChangeCompanyNameAndSize
         public async Task<ActionResult> ChangeCompanyNameAndSize()
         {
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             return View(new ChangeCompanyNameAndSize { CompanyName = user.CompanyName, CompanySize = user.CompanySize});
         }
 
-        // POST: /Manage/ChangeSocialMedia
+        // POST: /Manage/ChangeCompanyNameAndSize
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangeCompanyNameAndSize(ChangeCompanyNameAndSize model)
@@ -225,6 +250,34 @@ namespace MvcPWy.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             user.CompanyName = model.CompanyName;
             user.CompanySize = model.CompanySize;
+
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
+        // GET: /Manage/ChangeCountryStateCity
+        public async Task<ActionResult> ChangeCountryStateCity()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeCountryStateCity { Country = user.Country, State = user.StateName, City = user.CityName });
+        }
+
+        // POST: /Manage/ChangeCountryStateCity
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeCountryStateCity(ChangeCountryStateCity model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.CompanyName = model.Country.ToString();
+            user.StateName = model.State;
+            user.CityName= model.City;
 
 
             await UserManager.UpdateAsync(user);

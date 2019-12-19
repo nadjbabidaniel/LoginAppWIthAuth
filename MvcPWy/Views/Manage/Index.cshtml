@@ -30,18 +30,34 @@
             @Html.ActionLink("Manage", "ManageLogins") ]
         </dd>
 
+        <dt>Job Title:</dt>
+        <dd>
+            @(Model.JobTitle ?? "None") [
+            @if (Model.JobTitle != null)
+            {
+                @Html.ActionLink("Change", "ChangeFirstLastNameJobTitle")
+                @*@: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "ChangeFirstLastNameJobTitle")*@
+            }
+            else
+            {
+                @Html.ActionLink("Add", "ChangeFirstLastNameJobTitle")
+            }
+            ]
+        </dd>
+
         <dt>First Name:</dt>
         <dd>
             @(Model.FirstName ?? "None") [
             @if (Model.FirstName != null)
             {
-                @Html.ActionLink("Change", "ChangeFirstLastName")
+                @Html.ActionLink("Change", "ChangeFirstLastNameJobTitle")
                 @*@: &nbsp;|&nbsp;
-                    @Html.ActionLink("Remove", "RemovePhoneNumber")*@
+                @Html.ActionLink("Remove", "RemovePhoneNumber")*@
             }
             else
             {
-                @Html.ActionLink("Add", "ChangeFirstLastName")
+                @Html.ActionLink("Add", "ChangeFirstLastNameJobTitle")
             }
             ]
         </dd>
@@ -82,7 +98,7 @@
         <dd>
             @Html.EnumDropDownListFor(m => m.Gender, new { @disabled = "disabled" })
             [
-                @Html.ActionLink("Change", "ChangeGender")
+            @Html.ActionLink("Change", "ChangeGender")
             ]
         </dd>
 
@@ -104,13 +120,11 @@
 
         <dt>Company Name:</dt>
         <dd>
-            @(Model.CompanyName  ?? "None") 
+            @(Model.CompanyName ?? "None")
             [
             @if (Model.CompanyName != null)
             {
-                @Html.ActionLink("Change", "ChangeCompanyNameAndSize")
-                @*@: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCompanySize")*@
+                @Html.ActionLink("Change", "ChangeCompanyNameAndSize")                
             }
             else
             {
@@ -127,7 +141,7 @@
             {
                 @Html.ActionLink("Change", "ChangeCompanyNameAndSize")
                 @*@: &nbsp;|&nbsp;
-            @Html.ActionLink("Remove", "RemoveCompanySize")*@
+                @Html.ActionLink("Remove", "RemoveCompanySize")*@
             }
             else
             {
@@ -138,9 +152,9 @@
 
         <dt>Country Name:</dt>
         <dd>
-            @Html.EnumDropDownListFor(m => m.Country, new { @disabled = "disabled"  })
+            @Html.EnumDropDownListFor(m => m.Country, new { @disabled = "disabled" })
             [
-                @Html.ActionLink("Change", "ChangeCountryName")           
+            @Html.ActionLink("Change", "ChangeCountryStateCity")
             ]
         </dd>
 
@@ -149,13 +163,13 @@
             @(Model.StateName ?? "None") [
             @if (Model.StateName != null)
             {
-                @Html.ActionLink("Change", "AddStateName")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveStateName")
+                @Html.ActionLink("Change", "ChangeCountryStateCity")
+                @*@: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemoveStateName")*@
             }
             else
             {
-                @Html.ActionLink("Add", "RemoveStateName")
+                @Html.ActionLink("Add", "ChangeCountryStateCity")
             }
             ]
         </dd>
@@ -165,29 +179,13 @@
             @(Model.CityName ?? "None") [
             @if (Model.CityName != null)
             {
-                @Html.ActionLink("Change", "AddCityName")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCityName")
+                @Html.ActionLink("Change", "ChangeCountryStateCity")
+                @*@: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemoveCityName")*@
             }
             else
             {
-                @Html.ActionLink("Add", "RemoveCityName")
-            }
-            ]
-        </dd>
-
-        <dt>Job Title:</dt>
-        <dd>
-            @(Model.JobTitle ?? "None") [
-            @if (Model.JobTitle != null)
-            {
-                @Html.ActionLink("Change", "AddJobTitle")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveJobTitle")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "RemoveJobTitle")
+                @Html.ActionLink("Add", "ChangeCountryStateCity")
             }
             ]
         </dd>
@@ -196,7 +194,7 @@
         <dd>
             @Html.EnumDropDownListFor(m => m.Ethnicity, new { @disabled = "disabled" })
             [
-            @Html.ActionLink("Change", "ChangeEthnicity")            
+            @Html.ActionLink("Change", "ChangeEthnicity")
             ]
         </dd>
 
@@ -223,7 +221,6 @@
                 }
             }
         </dd>
-
     </dl>
 </div>
 

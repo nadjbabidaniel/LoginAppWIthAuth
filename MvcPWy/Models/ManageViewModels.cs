@@ -81,19 +81,37 @@ namespace MvcPWy.Models
         public string Number { get; set; }
     }
 
-    public class ChangeFirstLastNameViewModel
+    public class ChangeFirstLastNameJobTitleViewModel
     {
         [Display(Name = "Please insert your first name")]
         public string FirstName { get; set; }
 
         [Display(Name = "Please insert your last name")]
         public string LastName { get; set; }
+
+        [Display(Name = "Job Title")]
+        public string JobTitle { get; set; }
     }
 
-    public class ChangeGenderViewModel
+    public class ChangeGenderEthnicityViewModel
     {
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
+
+        [Display(Name = "Ethnicity")]
+        public Ethnicity Ethnicity { get; set; }
+    }
+    
+    public class ChangeCountryStateCity
+    {
+        [Display(Name = "Country")]
+        public Country Country { get; set; }
+
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Display(Name = "City")]
+        public string City { get; set; }
     }
 
     public class ChangeSocialMediaViewModel

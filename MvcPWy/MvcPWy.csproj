@@ -277,13 +277,15 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Info.cshtml" />
-    <Content Include="Views\Manage\ChangeFirstLastName.cshtml" />
+    <Content Include="Views\Manage\ChangeFirstLastNameJobTitle.cshtml" />
     <Content Include="Views\Home\Belohnungen.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ChangeGender.cshtml" />
     <Content Include="Views\Manage\ChangeSocialMedia.cshtml" />
     <Content Include="Views\Manage\AddSocialMedia.cshtml" />
     <Content Include="Views\Manage\ChangeCompanyNameAndSize.cshtml" />
+    <Content Include="Views\Manage\ChangeCountryStateCity.cshtml" />
+    <Content Include="Views\Manage\ChangeEthnicity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
