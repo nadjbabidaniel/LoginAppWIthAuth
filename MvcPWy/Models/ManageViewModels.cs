@@ -17,6 +17,8 @@ namespace MvcPWy.Models
         public string CompanyName { get; set; }
         public int CompanySize { get; set; }
         public string JobTitle { get; set; }
+
+        [Display(Name = "Country")]
         public Country Country { get; set; }
         public string StateName { get; set; }
         public string CityName { get; set; }
@@ -86,6 +88,12 @@ namespace MvcPWy.Models
 
         [Display(Name = "Please insert your last name")]
         public string LastName { get; set; }
+    }
+
+    public class ChangeGenderViewModel
+    {        
+        [Display(Name = "Gender")]
+        public Gender Gender { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel

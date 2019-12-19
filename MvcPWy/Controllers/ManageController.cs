@@ -131,6 +131,31 @@ namespace MvcPWy.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
+        // GET: /Manage/ChangeGender
+        public async Task<ActionResult> ChangeGender()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeGenderViewModel { Gender = user.Gender });
+        }
+
+        // POST: /Manage/ChangeGender
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeGender(ChangeGenderViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());           
+            user.Gender = model.Gender;
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
         //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()
