@@ -80,17 +80,9 @@
 
         <dt>Gender:</dt>
         <dd>
-            @(Model.Gender.ToString() ?? "None") [
-            @if (Model.Gender.ToString() != null)
-            {
+            @Html.EnumDropDownListFor(m => m.Country, new { @disabled = "disabled" })
+            [
                 @Html.ActionLink("Change", "ChangeGender")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveGender")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "RemoveGender")
-            }
             ]
         </dd>
 
@@ -112,17 +104,9 @@
 
         <dt>Company Name:</dt>
         <dd>
-            @(Model.CompanyName ?? "None") [
-            @if (Model.CompanyName != null)
-            {
-                @Html.ActionLink("Change", "ChangeCompanyName")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCompanyName")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "RemoveCompanyName")
-            }
+            @Html.EnumDropDownListFor(m => m.Gender, new { @disabled = "disabled" })
+            [
+            @Html.ActionLink("Change", "ChangeCompanyName")
             ]
         </dd>
 
@@ -144,17 +128,9 @@
 
         <dt>Country Name:</dt>
         <dd>
-            @(Model.Country.ToString() ?? "None") [
-            @if (Model.Country.ToString() != null)
-            {
-                @Html.ActionLink("Change", "AddCountryName")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCountryName")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "RemoveCountryName")
-            }
+            @Html.EnumDropDownListFor(m => m.Country, new { @disabled = "disabled"  })
+            [
+                @Html.ActionLink("Change", "ChangeCountryName")           
             ]
         </dd>
 
@@ -208,17 +184,9 @@
 
         <dt>Ethnicity:</dt>
         <dd>
-            @(Model.Ethnicity.ToString() ?? "None") [
-            @if (Model.Ethnicity.ToString() != null)
-            {
-                @Html.ActionLink("Change", "AddEthnicity")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveEthnicity")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "RemoveEthnicity")
-            }
+            @Html.EnumDropDownListFor(m => m.Ethnicity, new { @disabled = "disabled" })
+            [
+            @Html.ActionLink("Change", "ChangeEthnicity")            
             ]
         </dd>
 
