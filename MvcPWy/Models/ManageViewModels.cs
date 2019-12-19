@@ -82,7 +82,7 @@ namespace MvcPWy.Models
     }
 
     public class ChangeFirstLastNameViewModel
-    {        
+    {
         [Display(Name = "Please insert your first name")]
         public string FirstName { get; set; }
 
@@ -91,9 +91,24 @@ namespace MvcPWy.Models
     }
 
     public class ChangeGenderViewModel
-    {        
+    {
         [Display(Name = "Gender")]
         public Gender Gender { get; set; }
+    }
+
+    public class ChangeSocialMediaViewModel
+    {
+        [Display(Name = "SocialMedia")]
+        public string SocialMedia { get; set; }
+    }
+
+    public class ChangeCompanyNameAndSize
+    {
+        [Display(Name = "Company Name")]
+        public string CompanyName { get; set; }
+
+        [Display(Name = "Company Size")]
+        public int CompanySize { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel

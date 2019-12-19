@@ -92,44 +92,46 @@
             @if (Model.SocialMedia != null)
             {
                 @Html.ActionLink("Change", "ChangeSocialMedia")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveSocialMedia")
+                @*@: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemoveSocialMedia")*@
             }
             else
             {
-                @Html.ActionLink("Add", "RemoveSocialMedia")
+                @Html.ActionLink("Add", "AddSocialMedia")
             }
             ]
         </dd>
 
         <dt>Company Name:</dt>
         <dd>
-            @(Model.CompanyName  ?? "None") [
+            @(Model.CompanyName  ?? "None") 
+            [
             @if (Model.CompanyName != null)
             {
-                @Html.ActionLink("Change", "AddCompanySize")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCompanySize")
+                @Html.ActionLink("Change", "ChangeCompanyNameAndSize")
+                @*@: &nbsp;|&nbsp;
+                @Html.ActionLink("Remove", "RemoveCompanySize")*@
             }
             else
             {
-                @Html.ActionLink("Add", "RemoveCompanySize")
+                @Html.ActionLink("Add", "ChangeCompanyNameAndSize")
             }
             ]
         </dd>
 
         <dt>Company Size:</dt>
         <dd>
-            @(Model.CompanySize != 0) [
+            @(Model.CompanySize)
+            [
             @if (Model.CompanySize > 0)
             {
-                @Html.ActionLink("Change", "AddCompanySize")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemoveCompanySize")
+                @Html.ActionLink("Change", "ChangeCompanyNameAndSize")
+                @*@: &nbsp;|&nbsp;
+            @Html.ActionLink("Remove", "RemoveCompanySize")*@
             }
             else
             {
-                @Html.ActionLink("Add", "RemoveCompanySize")
+                @Html.ActionLink("Add", "ChangeCompanyNameAndSize")
             }
             ]
         </dd>

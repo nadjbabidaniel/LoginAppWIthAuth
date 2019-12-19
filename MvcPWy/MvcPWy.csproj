@@ -281,6 +281,9 @@
     <Content Include="Views\Home\Belohnungen.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ChangeGender.cshtml" />
+    <Content Include="Views\Manage\ChangeSocialMedia.cshtml" />
+    <Content Include="Views\Manage\AddSocialMedia.cshtml" />
+    <Content Include="Views\Manage\ChangeCompanyNameAndSize.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

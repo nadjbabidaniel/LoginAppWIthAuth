@@ -156,6 +156,82 @@ namespace MvcPWy.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
+        // GET: /Manage/ChangeSocialMedia
+        public async Task<ActionResult> ChangeSocialMedia()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeSocialMediaViewModel { SocialMedia = user.SocialMedia });
+        }
+
+        // POST: /Manage/ChangeSocialMedia
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeSocialMedia(ChangeSocialMediaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.SocialMedia = model.SocialMedia;
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
+        // GET: /Manage/ChangeSocialMedia
+        public ActionResult AddSocialMedia()
+        {            
+            return View();
+        }
+
+        // POST: /Manage/ChangeSocialMedia
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AddSocialMedia(ChangeSocialMediaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.SocialMedia = model.SocialMedia;
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
+        // GET: /Manage/ChangeCompany
+        public async Task<ActionResult> ChangeCompanyNameAndSize()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(new ChangeCompanyNameAndSize { CompanyName = user.CompanyName, CompanySize = user.CompanySize});
+        }
+
+        // POST: /Manage/ChangeSocialMedia
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeCompanyNameAndSize(ChangeCompanyNameAndSize model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.CompanyName = model.CompanyName;
+            user.CompanySize = model.CompanySize;
+
+
+            await UserManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Manage");
+        }
+
         //
         // GET: /Manage/AddPhoneNumber
         public ActionResult AddPhoneNumber()

@@ -24,7 +24,7 @@ namespace MvcPWy.Models
         public Gender Gender { get; set; }
         public string SocialMedia { get; set; }
         public string CompanyName { get; set; }
-        public int CompanySize { get; set; }
+        public int CompanySize { get; set; } = 0;
         public string JobTitle { get; set; }
         public Country Country{ get; set; }
         public string StateName { get; set; }
