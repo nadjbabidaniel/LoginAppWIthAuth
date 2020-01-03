@@ -30,69 +30,75 @@ namespace MvcPWy
       // Use NuGet to install SendGrid (Basic C# client lib) 
       private async Task configSendGridasync(IdentityMessage message)
       {
-            //try
-            //{
-            //    var smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
-
-            //    var creds = new NetworkCredential("tech@sisinternational.com", "Jo1799zakas!");
-
-            //    smtp.UseDefaultCredentials = false;
-            //    smtp.Credentials = creds;
-            //    smtp.EnableSsl = true;
-
-            //    var to = new System.Net.Mail.MailAddress(message.Destination);
-            //    var from = new System.Net.Mail.MailAddress("tech@sisinternational.com", "Your Contractor Connection");
-
-            //    var msg = new MailMessage();
-
-            //    msg.To.Add(to);
-            //    msg.From = from;
-            //    msg.IsBodyHtml = true;
-            //    msg.Subject = message.Subject;
-            //    msg.Body = message.Body;
-
-            //    await smtp.SendMailAsync(msg);
-            //}
-            //catch (Exception exception)
-            //{
-
-            //}
-
-            var myMessage = new SendGridMessage();
-            myMessage.AddTo(message.Destination);
-            myMessage.From = new System.Net.Mail.MailAddress(
-                                "Joe@contoso.com", "Joe S.");
-            myMessage.Subject = message.Subject + "Just test";
-            myMessage.Text = message.Body;
-            myMessage.Html = message.Body;
-
-            var credentials = new NetworkCredential(
-                       ConfigurationManager.AppSettings["mailAccount"],
-                       ConfigurationManager.AppSettings["mailPassword"]
-                       );
-
-            // Create a Web transport for sending email.
-            var transportWeb = new Web(credentials);
-
             try
             {
-                // Send the email.
-                if (transportWeb != null)
-                {
-                    await transportWeb.DeliverAsync(myMessage);
-                }
-                else
-                {
-                    Trace.TraceError("Failed to create Web transport.");
-                    await Task.FromResult(0);
-                }
+                var smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
+
+                var creds = new NetworkCredential("xyyy21490@gmail.com", "yyyx09412");
+
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = creds;
+                smtp.EnableSsl = true;
+
+                var to = new System.Net.Mail.MailAddress(message.Destination);
+                var from = new System.Net.Mail.MailAddress("xyyy21490@gmail.com", "Your Contractor Connection");
+
+                var msg = new MailMessage();
+
+                msg.To.Add(to);
+                msg.From = from;
+                msg.IsBodyHtml = true;
+                msg.Subject = message.Subject;
+                msg.Body = message.Body;
+
+                //await smtp.SendMailAsync(msg);
+
+                smtp.Send(msg.From.ToString(), msg.To.ToString(), msg.Subject, msg.Body);
+
+
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                Trace.TraceError(ex.Message + " SendGrid probably not configured correctly.");
+
             }
+
+            #region
+            //var myMessage = new SendGridMessage();
+            //myMessage.AddTo(message.Destination);
+            //myMessage.From = new System.Net.Mail.MailAddress(
+            //                    "xyyy21490@gmail.com", "Joe S.");
+            //myMessage.Subject = message.Subject + "Just test";
+            //myMessage.Text = message.Body;
+            //myMessage.Html = message.Body;
+
+            //var credentials = new NetworkCredential(
+            //           ConfigurationManager.AppSettings["mailAccount"],
+            //           ConfigurationManager.AppSettings["mailPassword"]
+            //           );
+
+            //// Create a Web transport for sending email.
+            //var transportWeb = new Web(credentials);
+
+            //try
+            //{
+            //    // Send the email.
+            //    if (transportWeb != null)
+            //    {
+            //        await transportWeb.DeliverAsync(myMessage);
+            //    }
+            //    else
+            //    {
+            //        Trace.TraceError("Failed to create Web transport.");
+            //        await Task.FromResult(0);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Trace.TraceError(ex.Message + " SendGrid probably not configured correctly.");
+            //}
+            #endregion
         }
-   }
+    }
 
    public class SmsService : IIdentityMessageService
    {
@@ -159,7 +165,7 @@ namespace MvcPWy
             BodyFormat = "Your security code is {0}"
          });
          manager.EmailService = new EmailService();
-         manager.SmsService = new SmsService();
+         //manager.SmsService = new SmsService();
          var dataProtectionProvider = options.DataProtectionProvider;
          if (dataProtectionProvider != null)
          {

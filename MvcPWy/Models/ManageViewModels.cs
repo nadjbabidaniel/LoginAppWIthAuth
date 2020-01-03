@@ -25,7 +25,7 @@ namespace MvcPWy.Models
         public Ethnicity Ethnicity { get; set; }
         public int CurrentNumberPrizes { get; set; }
         public int MaxNumberPrizes { get; set; } = 4;
-        public bool TwoFactor { get; set; }
+        public bool TwoFactor { get; set; } = false;
         public bool BrowserRemembered { get; set; }
     }
 

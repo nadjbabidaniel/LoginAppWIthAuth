@@ -47,6 +47,7 @@ namespace MvcPWy.Models
         White,
         Black,
         Asian,
+        [Display(Name = "Native American")]
         Native_American,
         Hispano
     }
